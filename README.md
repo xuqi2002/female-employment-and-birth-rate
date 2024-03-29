@@ -16,5 +16,5 @@ The repo is structured as:
 -   `scripts` contains the R scripts used to simulate, download, clean and test data.
 
 ## LLM Statement
-- This project utilizes ChatGPT4 for data cleaning and making plots, as well as other questions related to coding.
+- This paper utilizes ChatGPT4 for data cleaning and making plots, as well as other questions related to coding.
 - It is essential to provide transparency about their usage, a txt file is included to record conversations with ChatGPT.
