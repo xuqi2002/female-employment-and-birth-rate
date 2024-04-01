@@ -4,7 +4,7 @@
 # Data: 27 March 2024
 # Contact: xu.qi@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: To have ran the cleaning script to test the cleaned datasets
+# Pre-requisites: 02-data_cleaning.R
 
 #### Workspace setup ####
 library(tidyverse)
