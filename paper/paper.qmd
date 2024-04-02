@@ -1,11 +1,11 @@
 ---
-title: "Analyzing the Relationship between Increased Female Employment Rates and Lower Birth Rates"
+title: "Increased Female Employment Rates and Lower Birth Rates"
 subtitle: "An Analysis of Canada's Female Employment Rate and Birth Rate"
 author: Xu Qi
 thanks: "Code and data are available at: https://github.com/xuqi2002/female-employment-and-birth-rate.git"
 date: today
 date-format: long
-abstract: "This paper utilizes data from The World Bank to examine the relationship between Canada's female employment rate and birth rate between 2009 to 2019. The analysis shows a negative correlation between the two variables, indicating that as the female employment rate increased, the birth rate falls. Third sentence. Fourth sentence"
+abstract: "This paper utilizes data from The World Bank to examine the relationship between Canada's female employment rate and birth rate between 2009 to 2019. The analysis shows a negative correlation between the two variables, indicating that as the female employment rate increased, the birth rate falls. This finding is important because it highlights the importance of work-life balance to national fertility rates. These insights can guide the government to formulate appropriate childcare policies, thereby optimizing the country's demographic structure."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -29,7 +29,7 @@ The data used in this paper is obtained from the Data Bank website of The World 
 
 The data in the World Bank's Data Bank comes from a variety of sources, with a significant portion being collected and compiled by the World Bank itself, as well as from specialized agencies of the United Nations (UN), international organizations, national statistical offices, and other authoritative public and private sector sources. These data are then aggregated and analyzed by the World Bank to identify trends and inform policy recommendations.
 
-The two datasets that I will be using are: 'Birth rate, crude, per 1000 people' [@The_World_Bank_2024d], and 'Employment to population ratio, 15+, female (%) (national estimate)' [@The_World_Bank_2024c]. The two original datasets include data from 265 countries around the world for the period 1960-2022, although data are not available for every country in every year. I processed these two datasets, keeping only Canada's data for 2009-2019, and merged them into one dataset for analysis. The birth rate dataset presents the number of live births per 1,000 people in a given population over one year. The observations recorded in the processed dataset was 11.4 in 2009, and 9.9 in 2019. The female employment rate dataset presents the percentage of a country's female population aged 15 years and older that is employed. The value is expressed as a percentage of the total female population within the same age group. The observations recorded in the processed dataset was 57.958 in 2009, and 58.453 in 2019.
+The two datasets that I will be using are: `"Birth rate, crude, per 1000 people"` [@The_World_Bank_2024d], and `"Employment to population ratio, 15+, female (%) (national estimate)"` [@The_World_Bank_2024c]. The two original datasets include data from 265 countries around the world for the period 1960-2022, although data are not available for every country in every year. I processed these two datasets, keeping only Canada's data for 2009-2019, and merged them into one dataset for analysis. The birth rate dataset presents the number of live births per 1,000 people in a given population over one year. The observations recorded in the processed dataset was 11.4 in 2009, and 9.9 in 2019. The female employment rate dataset presents the percentage of a country's female population aged 15 years and older that is employed. The value is expressed as a percentage of the total female population within the same age group. The observations recorded in the processed dataset was 57.958 in 2009, and 58.453 in 2019.
 
 ```{r}
 #| include: false
@@ -57,9 +57,9 @@ library(knitr)
 kable(analysis_data)
 
 ```
-@tbl-data presents the overview of the cleaned dataset. There are 11 observations which are years from 2009 to 2019. The variables in the dataset include Year (in years),  Birth Rate (in per 1000 people) and Female Employment Rate (in percentage).
+@tbl-data presents the overview of the cleaned dataset. There are 11 observations which are years from 2009 to 2019. The variables in the dataset include `Year`,  `Birth_Rate_per_1000_people` and `Female_Employment_Rate` (in percentage).
 
-In this paper, the analysis is carried out using the statistical programming language `R` [@r], with the help of extra packages including `dplyr` [@Dplyr], `ggplot2` [@Ggplot2], `here` [@herePackage], `kableExtra` [@citekableExtra], `knitr` [@knitr], `modelsummary` [@model], `readr` [@readr], `tibble` [@tibblePackage], and `tidyverse` [@rTidyverse].
+In this paper, the analysis is carried out using the statistical programming language `R` [@r], with the help of extra packages including `arrow` [@arrow], `dplyr` [@Dplyr], `ggplot2` [@Ggplot2], `here` [@herePackage], `kableExtra` [@citekableExtra], `knitr` [@knitr], `modelsummary` [@model], `readr` [@readr], `tibble` [@tibblePackage], and `tidyverse` [@rTidyverse].
 
 ## Data Visualization
 
@@ -211,17 +211,46 @@ In summary, this linear model suggests a negative relationship between the Femal
 # Discussion
 
 ## Evolution of Female Employment in Canada
+As we have analyzed above, the trend of the female employment rate in Canada has been marked by significant growth, with fluctuations.This reflect broader economic cycles and policy changes. Over the past few decades, Canada has witnessed substantial changes in the labor market, particularly concerning female labor force participation.
 
+In the early 1990s, Canada's female employment rate began to rise sharply, reflecting a trend towards greater gender equality and the increased need for dual-income households in the face of economic pressures [@Fortin_2005]. This upward trajectory continued into the 2000s, albeit with periodic fluctuations that can be linked to macroeconomic conditions such as recessions and recoveries. For instance, during the economic downturn in 2008-2009, Canada, like many other countries, experienced a decrease in employment rates. However, it is notable that the impact on female employment was less pronounced than on male employment, which some scholars attribute to the concentration of women in less cyclical sectors such as healthcare and education [@Goldin_2014].
+
+Following the recovery from the recession, female employment rates in Canada resumed an upward trend. The participation of women in the workforce has been supported by several factors, including higher educational attainment among women and government policies aimed at encouraging female labor participation, such as subsidized child care and parental leave policies [@Blau_Kahn_2017]. These policies have not only enabled more women to join and remain in the workforce but also to progress into more skilled and higher-paid roles. 
+
+Despite these gains, the trend has not been without its challenges. Women, particularly those with young children, still face significant barriers to full-time employment, leading to a persistent gender gap in full-time employment rates [@Morissette_Ostrovsky_2005]. The part-time work, often undertaken by women, has implications for wage equity and career advancement opportunities. Moreover, the rise in female employment has not been uniform across all sectors or demographics; for example, immigrant women and women in rural areas often have lower employment rates than their urban counterparts [@Hou_Coulombe_2010].
+
+In conclusion, the trend of Canada's female employment rate reflects a complex interplay of economic forces, social change, and policy interventions. While significant progress has been made, ongoing challenges remain, necessitating a continuous commitment to fostering a labor market that supports gender equality and enables all Canadians to contribute to and benefit from economic growth.
 
 ## Evolution of Birth Rate in Canada
+As we have analyzed above, Canada's birth rate has a declining trend. It is not just happened in the past decade but over several decades, a pattern consistent with many other developed countries. The decline in birth rates reflects significant changes in individual and societal choices and is shaped by the broader social and economic context.
 
+Since the late 1960s, the birth rate of Canada has been on a downward slope, a trend described by the demographic transition theory, which links reductions in birth and death rates to societal advancements and improved living standards [@Kirk_1996]. This transition often accompanies increased urbanization, greater access to education, and improved healthcare, particularly in women's reproductive health services. By the 1990s, the birth rate in Canada had fallen to below-replacement levels, which is the rate required to replace the population without immigration [@Milan_2018]. The factors contributing to the decline are manifold. Increasing female participation in higher education and the workforce has been associated with delayed childbearing and reduced family size [@Beaujot_2007]. The rising cost of living, particularly in urban centers where most of the population resides, and concerns about work-life balance have also led many individuals and couples to opt for fewer children.
+
+Another factor influencing the birth rate is the shifting pattern of immigration. Immigrants tend to have higher birth rates upon arrival in Canada, but these rates often converge to the national average within a generation [@Ng_Nault_1997]. This demographic effect adds complexity to the analysis of birth rate trends. Moreover, social attitudes towards marriage and parenthood have evolved. With increased acceptance of cohabitation and non-traditional family structures, the link between marriage and childbearing has weakened, further affecting birth rates [@Le_Bourdais_Lapierre_Adamcyk_2004]. Government policies also play a role in shaping birth rates. In Canada and other developed countries, policies such as subsidies for child and parental leave provisions aim to alleviate the financial burden of child-rearing, potentially influencing decisions around having children. 
+
+Looking for the future, the continued decline in birth rates will have significant implications for Canada's demographic structure, including an aging population and the reated economic problems.  Policymakers must aviod these implications, considering the adequacy of retirement systems, healthcare services, and labor force planning.
 
 ## Impact of Female Employment on Birth Rate
 
+Although the regression analysis in this paper does not strongly support a negative correlation between the female employment rate and birth rate, this relationship has been agreed by many demographers, economists and policymakers, especially as many developed countries are experiencing changes in fertility patterns and the structure of the labor force. 
 
+Economic theory often posits that increased female labor force participation leads to a decrease in birth rates. This inverse relationship is primarily attributed to the opportunity costs associated with childbearing and childrearing. When women engage in paid work, the time and economic resources devoted to having children come at the expense of their career advancement and income potential [@Becker_2009]. Moreover, as women attain higher levels of education and more demanding careers, they may choose to delay marriage and parenthood or opt for smaller family sizes [@Bloom_2003].
+
+From a sociological standpoint, the changing norms and values around gender roles and family structures influence both female employment and fertility decisions. The rise in gender equality movements has contributed to a shift in societal expectations, leading to increased acceptance and support for women pursuing careers alongside or instead of traditional roles as primary caregivers [@McDonald_2000]. Consequently, as women's roles have diversified beyond the domestic sphere, their contributions to household income have become more vital, which can defer or reduce family planning intentions.
+
+However, the relationship is not always like above. The nature of the job market and the availability of family-friendly policies also play significant roles. Countries with supportive policies, such as subsidized childcare and flexible work arrangements, tend to reduce the negative impact of female employment on birth rates. For example, in Canada and some Scandinavian countries, despite high female employment rates, birth rates have not declined as steeply as might be expected, largely due to such supportive policies [@Rindfuss_Guilkey_Morgan_Kravdal_Guzzo_2007].
+
+In conclusion, while it's clear that female employment rates do have an impact on birth rates, the nature of this impact is complex. As societies evolve, the balancing act between employment and childbearing continues to be evolve in response to changing economic conditions, social norms, and policy frameworks.
 
 ## Weakness and Next Step
 
+This analysis examining the impact of the female employment rate on the birth rate in Canada and provides valuable insights. However, it has limitations that merit consideration for future research. 
 
+One key weakness is having the bias of omitting other variables. The model currently includes only the female employment rate as a predictor, possibly neglecting other factors that can influence the birth rate. Variables such as average age at marriage, access to contraception, cultural norms, economic conditions, immigration patterns, and government family policies could also significantly impact fertility rates. Ignoring these factors could mislead the effect of female employment on the birth rate.
 
+Another limitation is the assumption of a linear relationship between the two variables. The relationship may be more complex and could not captured by a simple linear model. For example, there could be threshold effects where the impact of female employment on the birth rate changes after reaching a certain level of employment rate. In addition, the data set used only 11 observations, which means 11 years. A larger dataset could provide a more detailed understanding of the relationship. Also, a comparative analysis including other countries could help contextualize the findings within a global framework. 
+
+For next steps, the analysis could be expanded to include other aspects that have been identified in the text above. This would allow for a more comprehensive model that can control complicated factors. Using a multivariate regression analysis could provide deeper insights. 
+
+\newpage
 # References
