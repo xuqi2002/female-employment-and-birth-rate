@@ -11,7 +11,7 @@ The repo is structured as:
 -   `data/raw_data` contains the raw data as obtained from The World Bank.
 -   `data/analysis_data` contains the cleaned dataset that was constructed.
 -   `models` contains fitted models. 
--   `other` details about LLM chat interactions, and sketches.
+-   `other` details about LLM chat interactions, datasheet of dataset, and sketches.
 -   `paper` contains the files used to generate the paper, including the Quarto document and references bib file, as well as the generated PDF of the paper. 
 -   `scripts` contains the R scripts used to simulate, download, clean and test data.
 
