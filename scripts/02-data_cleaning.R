@@ -8,6 +8,7 @@
 
 #### Workspace setup ####
 library(tidyverse)
+library(arrow)
 
 #### Clean data ####
 
@@ -30,4 +31,6 @@ combined_data <- left_join(canada_birth_rate, canada_employment_rate, by = "Year
 
 # Save the combined data to a new CSV file
 write_csv(combined_data, "data/analysis_data/canada_2009_2019.csv")
+
+write_parquet(combined_data, "data/analysis_data/canada_2009_2019.parquet")
 
