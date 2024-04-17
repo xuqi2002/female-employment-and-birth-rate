@@ -13,7 +13,7 @@ bibliography: references.bib
 
 # Introduction
 
-The relationship between a country's female employment rate and birth rate is a topic that has attracted considerable attention and debate among economists, population scientists and policymakers. The relationship is complex and multifaceted, often reflecting broader social and economic dynamics, cultural norms and policy environments. The female employment rate, defined as the proportion of the female population aged 15 and older that is employed, is a crucial indicator of gender equality and economic participation [@The_World_Bank_2024a]. As a developed country with a diversified economy and progressive social policies, the study of this relationship in Canada can shed light on broader discussions about work-life balance, gender equality and demographic trends. Over the past several decades, Canada has seen a significant increase in female labor force participation, mirroring trends in other advanced economies. This shift has been attributed to a variety of factors, including increased educational attainment among women, changes in societal attitudes towards female employment, and the implementation of policies aimed at facilitating work-life balance, such as maternity leave and childcare support [@Blau_Kahn_2017]. 
+The relationship between a country's female employment rate and birth rate is a topic that has attracted considerable attention and debate among economists, population scientists and policymakers. The relationship is complex and multifaceted, often reflecting broader social and economic dynamics, cultural norms and policy environments. The female employment rate, defined as the proportion of the female population aged 15 and older that is employed, is an indicator of gender equality and economic participation [@The_World_Bank_2024a]. As a developed country with a diversified economy and progressive social policies, the study of this relationship in Canada can shed light on broader discussions about work-life balance, gender equality and demographic trends. Over the past several decades, Canada has seen a significant increase in female labor force participation, mirroring trends in other advanced economies. This shift has been attributed to a variety of factors, including increased educational attainment among women, changes in societal attitudes towards female employment, and the implementation of policies aimed at facilitating work-life balance, such as maternity leave and childcare support [@Blau_Kahn_2017]. 
 
 At the same time, birth rates have been declining in many developed countries, including Canada. The birth rate, measured as the number of live births per 1,000 population per year, is influenced by myriad factors, including economic conditions, access to contraception and reproductive health services, and personal choices regarding family size and childbearing timing [@Sobotka_2017]. In the case of Canada, the birth rate has experienced fluctuations over the past few decades, with recent trends showing a gradual decline. This decline in birth rates is a feature common to many advanced economies and is often associated with factors such as increased female educational attainment and labor force participation, urbanization, and changes in family planning preferences [@Sobotka_2017].
 
@@ -162,10 +162,10 @@ analysis_data %>%
 @fig-3 illustrates a fitted graph of the linear regression model, showing the relationship between the Female Employment Rate (on the x-axis) and the Birth Rate per 1,000 people (on the y-axis). The dashed line indicates the trend as estimated by the linear regression model. The grey shaded area around the dashed line represents the confidence interval for the regression line, giving a visual indication of the uncertainty around the estimated relationship. The plot suggests a negative relationship between the two variables: as female employment rate increases, the birth rate rate decreases. The regression line confirms this trend, with a negative slope that is statistically significant. Overall, this figure provide strong evidence of the negative association between female employment rates and birth rates. With the confidence interval indicating the range, we can be reasonably sure that the true regression line lies in this area. 
 
 ```{r}
-#| echo: false
-#| warning: false
 #| label: tbl-model
 #| tbl-cap: "T-Value and P-Value of Regression"
+#| echo: false
+#| warning: false
 library(knitr)
 
 library(modelsummary)
@@ -183,10 +183,10 @@ kable(summary_df)
 
 
 ```{r}
-#| echo: false
-#| warning: false
 #| label: tbl-model2
 #| tbl-cap: "Summary of the linear regression model"
+#| echo: false
+#| warning: false
 
 modelsummary::modelsummary(
   list("Female_Employment_Rate" = loaded_model),
